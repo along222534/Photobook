@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Archive of Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,700&family=Mitr:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="book-container">
+        <div class="flip-book" id="myBook">
+            
+            <div class="page page-cover" data-density="hard">
+                <div class="page-content cover-inner">
+                    <div class="cover-design">
+                        <span class="edition">LIMITED EDITION 2026</span>
+                        <h1 class="main-title">BELOVED</h1>
+                        <p class="couple-names">CHEETA & CREAM</p>
+                        <div class="cover-photo">
+                            <img src="images/cover.jpg" alt="ใส่รูปหน้าปกตรงนี้">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="page-content page-white">
+                    <div class="intro-layout">
+                        <div class="photo-large">
+                            <img src="images/photo1.jpg" alt="ใส่รูปที่ 1">
+                        </div>
+                        <div class="intro-text">
+                            <span class="chapter">CHAPTER 01</span>
+                            <h3>WHERE IT BEGAN</h3>
+                            <p>ทุกอย่างเริ่มจากตรงนี้... วันที่ทำให้รู้ว่าความสุขหน้าตาเป็นยังไง</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="page-content page-pink-soft">
+                    <div class="sticker-strip">
+                        <div class="strip-item"><img src="images/stick1.jpg"></div>
+                        <div class="strip-item"><img src="images/stick2.jpg"></div>
+                        <div class="strip-item"><img src="images/stick3.jpg"></div>
+                        <div class="strip-item"><img src="images/stick4.jpg"></div>
+                        <div class="strip-logo">MEMORIES 2026</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="page-content page-white">
+                    <div class="grid-layout">
+                        <div class="grid-main"><img src="images/photo2.jpg"></div>
+                        <div class="grid-sub"><img src="images/photo3.jpg"></div>
+                        <div class="grid-desc">
+                            <p>Captured moments of your beautiful smile.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="page-content page-pink-dark">
+                    <div class="quote-container">
+                        <blockquote class="thai-quote">
+                            "เพราะในทุกๆ วันที่เดินไปพร้อมกับเธอ<br>คือช่วงเวลาที่มีความหมายที่สุดสำหรับผม"
+                        </blockquote>
+                        <div class="author">— From Alongkorn</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page page-cover" data-density="hard">
+                <div class="page-content back-inner">
+                    <div class="back-content">
+                        <h2>TBC.</h2>
+                        <p>To Be Continued in Our Future</p>
+                        <div class="barcode">|||| || | ||||| | ||</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="nav-controls">
+        <button id="prevBtn">PREVIOUS</button>
+        <div class="page-indicator"><span id="currPage">1</span> / <span id="totalPage">6</span></div>
+        <button id="nextBtn">NEXT</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
