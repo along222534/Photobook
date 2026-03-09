@@ -1,102 +1,384 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The Archive of Us</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,700&family=Mitr:wght@200;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHEETA × CREAM — Our Story Digital Photobook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,600&family=Mitr:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="container">
-    <div id="book-container">
-        <div class="flip-book" id="myBook">
-            
-            <div class="page page-cover" data-density="hard">
-                <div class="page-content cover-inner">
-                    <div class="cover-design">
-                        <span class="edition">LIMITED EDITION 2026</span>
-                        <h1 class="main-title">BELOVED</h1>
-                        <p class="couple-names">CHEETA & CREAM</p>
-                        <div class="cover-photo">
-                            <img src="images/cover.jpg" alt="ใส่รูปหน้าปกตรงนี้">
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Ambient background -->
+  <div class="ambient-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+  <div class="sparkle-field" id="sparkleField"></div>
 
-            <div class="page">
-                <div class="page-content page-white">
-                    <div class="intro-layout">
-                        <div class="photo-large">
-                            <img src="images/photo1.jpg" alt="ใส่รูปที่ 1">
-                        </div>
-                        <div class="intro-text">
-                            <span class="chapter">CHAPTER 01</span>
-                            <h3>WHERE IT BEGAN</h3>
-                            <p>ทุกอย่างเริ่มจากตรงนี้... วันที่ทำให้รู้ว่าความสุขหน้าตาเป็นยังไง</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-logo">
+      <span class="logo-bus">CHEETA</span>
+      <span class="logo-divider">×</span>
+      <span class="logo-beus">CREAM</span>
+    </div>
+    <div class="header-center">
+      <div class="header-title">Digital Photobook</div>
+      <div class="header-edition">✦ Our Story · Anniversary Edition ✦</div>
+    </div>
+    <div class="header-right">Vol. 01 / 2026</div>
+  </header>
 
-            <div class="page">
-                <div class="page-content page-pink-soft">
-                    <div class="sticker-strip">
-                        <div class="strip-item"><img src="images/stick1.jpg"></div>
-                        <div class="strip-item"><img src="images/stick2.jpg"></div>
-                        <div class="strip-item"><img src="images/stick3.jpg"></div>
-                        <div class="strip-item"><img src="images/stick4.jpg"></div>
-                        <div class="strip-logo">MEMORIES 2026</div>
-                    </div>
-                </div>
-            </div>
+  <!-- Main App -->
+  <main class="app-wrapper">
+    <div class="book-scene">
+      <div id="book-container">
 
-            <div class="page">
-                <div class="page-content page-white">
-                    <div class="grid-layout">
-                        <div class="grid-main"><img src="images/photo2.jpg"></div>
-                        <div class="grid-sub"><img src="images/photo3.jpg"></div>
-                        <div class="grid-desc">
-                            <p>Captured moments of your beautiful smile.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- ═══════════════════════════════════════
+             PAGE 1 — FRONT COVER
+        ═══════════════════════════════════════ -->
+        <div class="page page-cover page-front-cover">
+          <div class="cover-texture"></div>
+          <div class="cover-holographic-layer"></div>
 
-            <div class="page">
-                <div class="page-content page-pink-dark">
-                    <div class="quote-container">
-                        <blockquote class="thai-quote">
-                            "เพราะในทุกๆ วันที่เดินไปพร้อมกับเธอ<br>คือช่วงเวลาที่มีความหมายที่สุดสำหรับผม"
-                        </blockquote>
-                        <div class="author">— From Alongkorn</div>
-                    </div>
-                </div>
+          <!-- Official Goods Badge -->
+          <div class="official-badge">
+            <div class="badge-glow"></div>
+            <div class="badge-body">
+              <div class="badge-star-top">✦</div>
+              <div class="badge-official">OFFICIAL</div>
+              <div class="badge-brand">C×C</div>
+              <div class="badge-goods">GOODS</div>
+              <div class="badge-star-bot">✦</div>
             </div>
+          </div>
 
-            <div class="page page-cover" data-density="hard">
-                <div class="page-content back-inner">
-                    <div class="back-content">
-                        <h2>TBC.</h2>
-                        <p>To Be Continued in Our Future</p>
-                        <div class="barcode">|||| || | ||||| | ||</div>
-                    </div>
-                </div>
+          <!-- Cover Photo -->
+          <div class="cover-photo-wrap">
+            <div class="cover-photo-frame">
+              <img src="images/cover.jpg" alt="Cover" class="cover-img" onerror="this.style.display='none';this.parentElement.classList.add('img-placeholder-cover')" />
+              <div class="cover-photo-vignette"></div>
             </div>
+          </div>
 
+          <!-- Cover Texts -->
+          <div class="cover-text-block">
+            <div class="cover-eyebrow">✦&nbsp;&nbsp;OUR STORY&nbsp;&nbsp;✦</div>
+            <h1 class="cover-title">OUR STORY</h1>
+            <div class="cover-rule"></div>
+            <p class="cover-names">CHEETA × <em>CREAM</em></p>
+            <div class="cover-series-tag">CHEETA × CREAM &nbsp;·&nbsp; OUR STORY VOL. 01</div>
+          </div>
+
+          <div class="cover-bottom-bar">
+            <span>CHEETA × CREAM</span>
+            <span class="bar-dot">●</span>
+            <span>OUR STORY</span>
+            <span class="bar-dot">●</span>
+            <span>2026</span>
+          </div>
         </div>
-    </div>
 
+        <!-- ═══════════════════════════════════════
+             PAGE 2 — INSIDE COVER (verso)
+        ═══════════════════════════════════════ -->
+        <div class="page page-inside-cover">
+          <div class="inside-pattern"></div>
+          <div class="inside-cover-content">
+            <div class="ic-shine-deco">✦</div>
+            <p class="ic-quote">"เรื่องราวของเรา สวยงามที่สุดในโลก"</p>
+            <p class="ic-sub">Our Story · Forever Together</p>
+            <div class="ic-logo-badge">
+              <span>✦</span><span class="ic-bus">C × C</span><span>✦</span>
+            </div>
+            <p class="ic-edition">CHEETA × CREAM · 2026</p>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 3 — CHAPTER 1 INTRO (left)
+        ═══════════════════════════════════════ -->
+        <div class="page page-chapter-intro page-left">
+          <div class="chapter-bg-deco"></div>
+          <div class="chapter-label-wrap">
+            <div class="chapter-number">01</div>
+            <div class="chapter-label-text">Chapter One</div>
+          </div>
+          <h2 class="chapter-title">To My<br/><em>Special One</em></h2>
+          <div class="chapter-ornament"><span>✦</span></div>
+          <div class="thai-text-block">
+            <p>ในทุกวันที่ผ่านมา เธอคือแสงสว่างที่ส่องทางให้ฉัน เหมือนดวงดาวที่ไม่เคยดับ แม้ในคืนที่มืดที่สุด</p>
+            <p>เธอทำให้ฉันรู้ว่า ความรักที่แท้จริงนั้นคืออะไร — มันคือการที่มีใครสักคนทำให้โลกทั้งใบดูสวยงามขึ้น</p>
+            <p>ขอบคุณที่เป็นแรงบันดาลใจในทุกลมหายใจของฉัน</p>
+          </div>
+          <div class="chapter-signature">— ด้วยความรัก, <em>CHEETA</em></div>
+          <div class="page-number-label">03</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 4 — FULL PHOTO (right)
+        ═══════════════════════════════════════ -->
+        <div class="page page-full-photo page-right">
+          <div class="full-photo-frame">
+            <img src="images/photo1.jpg" alt="Photo" class="full-photo-img" onerror="this.style.display='none';this.parentElement.classList.add('img-placeholder')" />
+            <div class="fp-vignette"></div>
+            <div class="fp-corner fp-tl"></div>
+            <div class="fp-corner fp-tr"></div>
+            <div class="fp-corner fp-bl"></div>
+            <div class="fp-corner fp-br"></div>
+          </div>
+          <div class="fp-caption-strip">✦&nbsp;&nbsp;MY SUNSHINE&nbsp;&nbsp;✦</div>
+          <div class="page-number-label">04</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 5 — PHOTOCARD BINDER (left)
+        ═══════════════════════════════════════ -->
+        <div class="page page-binder page-left">
+          <div class="binder-rings-left">
+            <div class="ring-hole"></div>
+            <div class="ring-hole"></div>
+            <div class="ring-hole"></div>
+          </div>
+          <div class="binder-header-bar">
+            <span class="bh-title">PHOTOCARD COLLECTION</span>
+            <span class="bh-sub">CHEETA × CREAM · OUR COLLECTION</span>
+          </div>
+          <div class="binder-grid">
+            <div class="pc-sleeve">
+              <div class="sleeve-body">
+                <div class="holo-overlay"></div>
+                <img src="images/pc1.jpg" alt="PC1" class="pc-photo" onerror="this.style.display='none';this.parentElement.classList.add('pc-img-placeholder')" />
+              </div>
+              <div class="sleeve-label">PC #01</div>
+            </div>
+            <div class="pc-sleeve">
+              <div class="sleeve-body">
+                <div class="holo-overlay"></div>
+                <img src="images/pc2.jpg" alt="PC2" class="pc-photo" onerror="this.style.display='none';this.parentElement.classList.add('pc-img-placeholder')" />
+              </div>
+              <div class="sleeve-label">PC #02</div>
+            </div>
+            <div class="pc-sleeve">
+              <div class="sleeve-body">
+                <div class="holo-overlay"></div>
+                <img src="images/pc3.jpg" alt="PC3" class="pc-photo" onerror="this.style.display='none';this.parentElement.classList.add('pc-img-placeholder')" />
+              </div>
+              <div class="sleeve-label">PC #03</div>
+            </div>
+            <div class="pc-sleeve">
+              <div class="sleeve-body">
+                <div class="holo-overlay"></div>
+                <img src="images/pc4.jpg" alt="PC4" class="pc-photo" onerror="this.style.display='none';this.parentElement.classList.add('pc-img-placeholder')" />
+              </div>
+              <div class="sleeve-label">PC #04</div>
+            </div>
+          </div>
+          <div class="binder-footer">✦ TREASURED MOMENTS ✦</div>
+          <div class="page-number-label">05</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 6 — LOMO BINDER (right)
+        ═══════════════════════════════════════ -->
+        <div class="page page-binder page-right">
+          <div class="binder-rings-right">
+            <div class="ring-hole"></div>
+            <div class="ring-hole"></div>
+            <div class="ring-hole"></div>
+          </div>
+          <div class="binder-header-bar">
+            <span class="bh-title">OUR SPECIAL LOMO CARDS</span>
+            <span class="bh-sub">ANNIVERSARY EDITION · 2024</span>
+          </div>
+          <div class="binder-grid lomo-grid">
+            <div class="pc-sleeve lomo-sleeve">
+              <div class="sleeve-body lomo-body">
+                <div class="holo-overlay"></div>
+                <img src="images/pc5.jpg" alt="Lomo1" class="pc-photo" onerror="this.style.display='none';this.parentElement.classList.add('pc-img-placeholder')" />
+                <div class="lomo-strip">
+                  <span class="ls-name">C×C</span>
+                  <span class="ls-series">C×C · 2024</span>
+                </div>
+              </div>
+              <div class="sleeve-label">LOMO #01</div>
+            </div>
+            <div class="pc-sleeve lomo-sleeve">
+              <div class="sleeve-body lomo-body">
+                <div class="holo-overlay"></div>
+                <img src="images/pc6.jpg" alt="Lomo2" class="pc-photo" onerror="this.style.display='none';this.parentElement.classList.add('pc-img-placeholder')" />
+                <div class="lomo-strip">
+                  <span class="ls-name">C×C</span>
+                  <span class="ls-series">C×C · 2024</span>
+                </div>
+              </div>
+              <div class="sleeve-label">LOMO #02</div>
+            </div>
+          </div>
+          <!-- Authenticity card -->
+          <div class="auth-card">
+            <div class="auth-holo"></div>
+            <div class="auth-content">
+              <div class="auth-top-text">CERTIFICATE OF OUR LOVE</div>
+              <div class="auth-serial">CXCREAM-2024-001</div>
+              <div class="auth-bot-text">CHEETA × CREAM · Verified ✦</div>
+            </div>
+          </div>
+          <div class="page-number-label">06</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 7 — AESTHETIC GRID (left)
+        ═══════════════════════════════════════ -->
+        <div class="page page-aesthetic page-left">
+          <div class="aes-chapter-mark">
+            <span class="acm-num">03</span>
+            <span class="acm-name">Brightest Light</span>
+          </div>
+          <div class="aes-grid">
+            <div class="aes-photo aes-main">
+              <img src="images/photo2.jpg" alt="Photo 2" class="aes-img" onerror="this.style.display='none';this.parentElement.classList.add('img-placeholder')" />
+              <div class="aes-sheen"></div>
+            </div>
+            <div class="aes-col-right">
+              <div class="aes-photo aes-small">
+                <img src="images/photo3.jpg" alt="Photo 3" class="aes-img" onerror="this.style.display='none';this.parentElement.classList.add('img-placeholder')" />
+                <div class="aes-sheen"></div>
+              </div>
+              <div class="aes-photo aes-small">
+                <img src="images/photo4.jpg" alt="Photo 4" class="aes-img" onerror="this.style.display='none';this.parentElement.classList.add('img-placeholder')" />
+                <div class="aes-sheen"></div>
+              </div>
+            </div>
+          </div>
+          <div class="page-number-label">07</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 8 — CAPTION PAGE (right)
+        ═══════════════════════════════════════ -->
+        <div class="page page-caption page-right">
+          <div class="cap-content">
+            <div class="cap-rule-top"></div>
+            <div class="cap-eyebrow">✦ ALWAYS &amp; FOREVER ✦</div>
+            <blockquote class="cap-quote">
+              "You are the<br/>brightest light<br/>in my life."
+            </blockquote>
+            <p class="cap-thai">
+              "เธอคือแสงสว่างที่สดใสที่สุด<br/>ในชีวิตของฉัน"
+            </p>
+            <div class="cap-rule-bot"></div>
+            <div class="cap-mini-grid">
+              <div class="cmg-photo">
+                <img src="images/photo5.jpg" alt="Photo 5" class="cmg-img" onerror="this.style.display='none';this.parentElement.classList.add('img-placeholder')" />
+              </div>
+              <div class="cmg-photo">
+                <img src="images/photo6.jpg" alt="Photo 6" class="cmg-img" onerror="this.style.display='none';this.parentElement.classList.add('img-placeholder')" />
+              </div>
+            </div>
+            <div class="cap-sig">— CHEETA ♡ CREAM</div>
+          </div>
+          <div class="page-number-label">08</div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 9 — BACK INSIDE (left)
+        ═══════════════════════════════════════ -->
+        <div class="page page-back-inside page-left">
+          <div class="bi-pattern"></div>
+          <div class="bi-content">
+            <div class="bi-logo">✦ C × C ✦</div>
+            <div class="bi-hearts">♡ &nbsp; ♡ &nbsp; ♡</div>
+            <p class="bi-message">ขอบคุณที่เป็นทุกอย่างให้ฉัน<br/>รักเธอตลอดไป CREAM</p>
+            <div class="bi-stamp">
+              <div class="stamp-ring">
+                <div class="stamp-inner">
+                  <div class="stamp-main">C×C</div>
+                  <div class="stamp-year">✦ 2026 ✦</div>
+                  <div class="stamp-sub">ANNIVERSARY</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════
+             PAGE 10 — BACK COVER
+        ═══════════════════════════════════════ -->
+        <div class="page page-cover page-back-cover">
+          <div class="back-texture"></div>
+          <div class="back-holo-layer"></div>
+
+          <div class="back-cover-content">
+            <div class="bc-top-bar">
+              <span>✦</span>
+              <span>CHEETA × CREAM · ANNIVERSARY COLLECTION</span>
+              <span>✦</span>
+            </div>
+
+            <div class="bc-emblem-wrap">
+              <div class="bc-emblem">
+                <div class="bc-emblem-glow"></div>
+                <div class="bc-emblem-ring">
+                  <div class="bc-emblem-inner">
+                    <div class="bc-em-bus">C×C</div>
+                    <div class="bc-em-shine">✦ FOREVER ✦</div>
+                    <div class="bc-em-beus">OUR STORY</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bc-barcode-section">
+              <canvas id="barcodeCanvas" width="200" height="60"></canvas>
+              <div class="bc-barcode-num">CXCREAM-2026-001</div>
+            </div>
+
+            <div class="bc-made-by">
+              Made with ♡ by <strong>CHEETA</strong> &nbsp;|&nbsp; Forever Yours, CREAM
+            </div>
+
+            <div class="bc-bottom-bar">
+              <span>CHEETA × CREAM — Our Story</span>
+              <span>© 2026 Our Story Collection</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /#book-container -->
+    </div><!-- /.book-scene -->
+
+    <!-- Navigation -->
     <div class="nav-controls">
-        <button id="prevBtn">PREVIOUS</button>
-        <div class="page-indicator"><span id="currPage">1</span> / <span id="totalPage">6</span></div>
-        <button id="nextBtn">NEXT</button>
+      <button class="nav-btn" id="prevBtn" aria-label="Previous page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <span>Prev</span>
+      </button>
+      <div class="page-counter">
+        <span id="currentPage">1</span>
+        <span class="counter-sep">/</span>
+        <span id="totalPages">—</span>
+      </div>
+      <button class="nav-btn" id="nextBtn" aria-label="Next page">
+        <span>Next</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
-<script src="script.js"></script>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span>✦ CHEETA × CREAM Digital Photobook ✦</span>
+    <span>Our Story · Anniversary Edition 2024</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
