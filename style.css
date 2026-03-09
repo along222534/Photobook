@@ -567,12 +567,16 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 ═══════════════════════════════════════════════════════════════ */
 .page-binder {
   background: linear-gradient(160deg, #f5f0f8 0%, #ecdff5 100%);
-  padding: 14px 14px 14px 24px;
+  padding: 10px 10px 8px 28px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
 }
 .page-binder.page-right {
-  padding: 14px 24px 14px 14px;
+  padding: 10px 28px 8px 10px;
 }
 
 /* Ring holes */
@@ -601,9 +605,10 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 8px 0 10px;
+  padding: 4px 0 6px;
   border-bottom: 2px solid rgba(180,130,210,0.25);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  flex-shrink: 0;
 }
 .bh-title {
   font-size: 0.65rem;
@@ -623,19 +628,23 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .binder-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  flex: 1;
+  gap: 8px;
   padding: 0 4px;
+  overflow: hidden;
+  /* คำนวณ: page 600px - header 46px - footer 24px - padding 18px - margin 8px = 504px ÷ 2 rows */
+  grid-template-rows: 228px 228px;
 }
 .lomo-grid {
   grid-template-columns: 1fr;
-  max-height: 260px;
+  grid-template-rows: 1fr 1fr;
 }
 .pc-sleeve {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
+  height: 228px;
+  overflow: hidden;
 }
 .lomo-sleeve { flex-direction: row; align-items: center; gap: 10px; }
 .lomo-sleeve .sleeve-label { writing-mode: vertical-rl; font-size: 0.5rem; }
@@ -643,7 +652,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .sleeve-body {
   position: relative;
   width: 100%;
-  aspect-ratio: 2/3;
+  height: 200px;
+  overflow: hidden;
   background: rgba(255,255,255,0.8);
   border-radius: 4px;
   border: 1.5px solid rgba(200,180,220,0.6);
@@ -742,7 +752,8 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   font-size: 0.55rem;
   letter-spacing: 0.22em;
   color: var(--text-light);
-  padding-top: 8px;
+  padding-top: 6px;
+  flex-shrink: 0;
   font-family: var(--font-thai);
 }
 
@@ -1126,7 +1137,11 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   /* Binder rings hide on mobile to save space */
   .binder-rings-left { display: none; }
   .binder-rings-right { display: none; }
-  .page-binder { padding: 14px; }
+  .page-binder { padding: 8px; }
+  /* mobile page ~70vh ≈ 588px → rows = (588 - 70) / 2 = 259px */
+  .binder-grid { grid-template-rows: 175px 175px; gap: 6px; }
+  .pc-sleeve   { height: 175px; }
+  .sleeve-body { height: 148px; }
 
   /* BC bottom bar stacks */
   .bc-bottom-bar { flex-direction: column; gap: 4px; text-align: center; }
