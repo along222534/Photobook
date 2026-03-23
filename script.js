@@ -1,35 +1,35 @@
 /* ═══════════════════════════════════════════════════════════════
-   BUS × BEUS Digital Photobook — script.js
-   St.PageFlip integration · Responsive · Sparkles · Barcode
+   CHEETA × CREAM Digital Photobook — script.js  (UPGRADED)
+   St.PageFlip · Responsive · Sparkles · Barcode · Gold Accents
 ═══════════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ─────────────────────────────────────────────
-     1. SPARKLE FIELD
+     1. SPARKLE FIELD — varied shapes
   ───────────────────────────────────────────── */
   (function initSparkles() {
     const field = document.getElementById('sparkleField');
     if (!field) return;
-    const COUNT = 60;
+    const COUNT = 70;
     for (let i = 0; i < COUNT; i++) {
       const s = document.createElement('div');
       s.className = 'sparkle';
-      const size = Math.random() * 3 + 1;
+      const size = Math.random() * 3.5 + 1;
       s.style.cssText = `
-        left:  ${Math.random() * 100}vw;
-        top:   ${Math.random() * 100}vh;
-        width: ${size}px;
+        left:   ${Math.random() * 100}vw;
+        top:    ${Math.random() * 100}vh;
+        width:  ${size}px;
         height: ${size}px;
-        --dur:   ${(Math.random() * 4 + 2).toFixed(2)}s;
-        --delay: ${(Math.random() * -6).toFixed(2)}s;
+        --dur:   ${(Math.random() * 5 + 2.5).toFixed(2)}s;
+        --delay: ${(Math.random() * -8).toFixed(2)}s;
       `;
       field.appendChild(s);
     }
   })();
 
   /* ─────────────────────────────────────────────
-     2. BARCODE GENERATOR (canvas)
+     2. BARCODE GENERATOR — gold palette
   ───────────────────────────────────────────── */
   (function drawBarcode() {
     const canvas = document.getElementById('barcodeCanvas');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const W = canvas.width;
     const H = canvas.height;
 
-    const serial = 'BEUS-ANV-2024-001';
+    const serial = 'CXCREAM-2026-001';
     let seed = 0;
     for (let i = 0; i < serial.length; i++) seed += serial.charCodeAt(i);
 
@@ -51,23 +51,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let x = 3;
 
-    // Left guard bars
-    ctx.fillStyle = 'rgba(248,184,208,0.9)';
+    // Left guard bars — gold tint
+    ctx.fillStyle = 'rgba(212,168,85,0.8)';
     ctx.fillRect(x, 4, 1.5, H - 12); x += 2.5;
     ctx.fillRect(x, 4, 0.8, H - 12); x += 1.5;
 
     for (let i = 0; i < 55; i++) {
       const barW = rand() * 2.5 + 0.8;
       const barH = rand() > 0.3 ? H - 14 : H - 22;
-      const alpha = 0.55 + rand() * 0.45;
-      ctx.fillStyle = 'rgba(248,184,208,' + alpha.toFixed(2) + ')';
+      const alpha = 0.45 + rand() * 0.5;
+      // Alternate rose and gold tones
+      const isGold = rand() > 0.4;
+      if (isGold) {
+        ctx.fillStyle = `rgba(212,168,85,${alpha.toFixed(2)})`;
+      } else {
+        ctx.fillStyle = `rgba(240,160,192,${alpha.toFixed(2)})`;
+      }
       ctx.fillRect(x, 4, barW, barH);
       x += barW + (rand() * 1.5 + 0.5);
       if (x > W - 8) break;
     }
 
     // Right guard bars
-    ctx.fillStyle = 'rgba(248,184,208,0.9)';
+    ctx.fillStyle = 'rgba(212,168,85,0.8)';
     x = W - 6;
     ctx.fillRect(x, 4, 0.8, H - 12); x += 1.5;
     ctx.fillRect(x, 4, 1.5, H - 12);
@@ -89,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─────────────────────────────────────────────
      4. STPAGEFLIP INIT
   ───────────────────────────────────────────── */
-  const bookEl = document.getElementById('book-container');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
+  const bookEl        = document.getElementById('book-container');
+  const prevBtn       = document.getElementById('prevBtn');
+  const nextBtn       = document.getElementById('nextBtn');
   const currentPageEl = document.getElementById('currentPage');
   const totalPagesEl  = document.getElementById('totalPages');
 
@@ -109,16 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
       width:  singleW,
       height: d.height,
       size:   'fixed',
-      maxShadowOpacity: 0.5,
+      maxShadowOpacity: 0.6,
       showCover: true,
       mobileScrollSupport: true,
       clickEventForward: true,
       usePortrait: isPortrait,
       startPage: 0,
       drawShadow: true,
-      flippingTime: 900,
+      flippingTime: 1000,
       useMouseEvents: true,
-      swipeDistance: 30,
+      swipeDistance: 25,
       showPageCorners: true,
       disableFlipByClick: false,
       autoSize: false,
@@ -190,15 +196,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = sleeve.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top)  / rect.height;
-      const rX = (y - 0.5) * -18;
-      const rY = (x - 0.5) *  18;
-      sleeve.style.transform = `perspective(400px) rotateX(${rX}deg) rotateY(${rY}deg) translateY(-4px)`;
+      const rX = (y - 0.5) * -20;
+      const rY = (x - 0.5) *  20;
+      sleeve.style.transform = `perspective(450px) rotateX(${rX}deg) rotateY(${rY}deg) translateY(-5px) scale(1.02)`;
       const ov = sleeve.querySelector('.holo-overlay');
       if (ov) {
         ov.style.background = `radial-gradient(circle at ${x*100}% ${y*100}%,
-          rgba(255,255,255,0.9) 0%, rgba(255,182,193,0.6) 20%,
-          rgba(200,220,255,0.5) 40%, rgba(200,255,220,0.4) 60%, transparent 80%)`;
-        ov.style.opacity = '0.75';
+          rgba(255,255,255,0.95) 0%,
+          rgba(255,200,220,0.7) 15%,
+          rgba(212,168,85,0.5)  30%,
+          rgba(200,220,255,0.5) 50%,
+          rgba(200,255,220,0.4) 65%,
+          transparent 80%)`;
+        ov.style.opacity = '0.85';
       }
     });
     sleeve.addEventListener('mouseleave', () => {
@@ -209,13 +219,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ─────────────────────────────────────────────
-     8. ENTRANCE FADE
+     8. ENTRANCE FADE — smooth reveal
   ───────────────────────────────────────────── */
   const scene = document.querySelector('.book-scene');
   scene.style.opacity = '0';
+  scene.style.transform = 'translateY(20px) scale(0.98)';
   setTimeout(() => {
-    scene.style.transition = 'opacity 0.8s ease';
+    scene.style.transition = 'opacity 1s ease, transform 1s cubic-bezier(0.25,0.46,0.45,0.94)';
     scene.style.opacity = '1';
-  }, 120);
+    scene.style.transform = 'translateY(0) scale(1)';
+  }, 150);
 
 });
